@@ -1,0 +1,25 @@
+# linear regression
+corr method using pearson method its standard
+
+we need creat triangle model indices for store valuable data of correlation of coefficient
+
+[[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]]
+
+correlation calculation in continues data's only
+correlation calculation not valid in dummy variable or true false variable (0,1)
+
+pairplot using to plot all columns in data frame
+using heatmap draw the correlation of columns

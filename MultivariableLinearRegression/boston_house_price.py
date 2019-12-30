@@ -1,4 +1,6 @@
 from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -99,8 +101,9 @@ class BostonHouse:
         sns.lmplot(x='RM', y='PRICE', data=self.boston_dataset)
         plt.show()
         # ploting enter data frame using seaborn pairplot
-        sns.pairplot(self.boston_dataset, kind='reg', plot_kws={'line_kws': {'color': 'cyan'}})
-        plt.show()
+        # comment due to time taken
+        # sns.pairplot(self.boston_dataset, kind='reg', plot_kws={'line_kws': {'color': 'cyan'}})
+        # plt.show()
 
     def static_data(self):
         print('average of rooms in house')
@@ -127,8 +130,31 @@ class BostonHouse:
         # creating triangle model
         triangle_indices = np.triu_indices_from(mask)
         mask[triangle_indices] = True
-        boston.visualization(mask)
+        # boston.visualization(mask)
         print(mask)
+
+    def split_shuffle_data(self):
+        prices = self.boston_dataset['PRICE']
+        features = self.boston_dataset.drop('PRICE', axis=1)
+        # tran_test_split return four variable
+        x_train, x_test, y_train, y_test = train_test_split(features, prices, test_size=0.2, random_state=10)
+        # checking data percentage in train and test
+        print('train data set size')
+        print(len(x_train) / len(features))
+        # checking test data size
+        print('test data set size')
+        print(x_test.shape[0] / features.shape[0])
+        # linear regression
+        linear_reg = LinearRegression()
+        linear_reg.fit(x_train, y_train)
+        print('intercept', linear_reg.intercept_)
+        print('coef in data frame')
+        coef_df = pd.DataFrame(data=linear_reg.coef_, index=x_train.columns, columns=['coef'])
+        print(coef_df)
+        print('Train data set r-squared :-', linear_reg.score(x_train, y_train))
+        print('Test data set r-squared :-', linear_reg.score(x_test, y_test))
+        # -----model evaluation deploy model stage-----
+
 
 
 boston = BostonHouse(boston_dataset)
@@ -136,3 +162,4 @@ boston.info()
 boston.cleaning_data()
 
 boston.static_data()
+boston.split_shuffle_data()

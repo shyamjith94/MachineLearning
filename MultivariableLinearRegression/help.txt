@@ -1,4 +1,15 @@
 # linear regression
+
+stages of regression
+--------------------
+    formulate question
+    gather data
+    clean data
+    explore and evaluate
+    train algorithm
+    deploy and evaluate
+
+
 corr method using pearson method its standard
 
 we need creat triangle model indices for store valuable data of correlation of coefficient
@@ -23,3 +34,9 @@ correlation calculation not valid in dummy variable or true false variable (0,1)
 
 pairplot using to plot all columns in data frame
 using heatmap draw the correlation of columns
+shuffle data is may its certain order
+
+evaluation and deploy final stage regression
+
+how to evaluate regression model
+----------------------------------

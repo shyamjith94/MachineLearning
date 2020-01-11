@@ -1,4 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shellcheckPlugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultivariableLinearRegression/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MultivariableLinearRegression/help.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VIkiKcYIMElEgGI6UU7wyPs6af" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="MachineLearningUdumy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="boston_house_price" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MachineLearningUdumy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultivariableLinearRegression" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="" />
+      <created>1578492447322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578492447322</updated>
+      <workItem from="1578492456065" duration="69000" />
+      <workItem from="1578493125091" duration="3109000" />
+      <workItem from="1578732907325" duration="15000" />
+      <workItem from="1578732967457" duration="8054000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="507" y="277" width="352" height="184" key="#Shellcheck" timestamp="1578734447448">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="507" y="277" width="352" height="184" key="#Shellcheck/0.0.1366.768@0.0.1366.768" timestamp="1578734447448" />
+    <state x="412" y="0" width="532" height="742" key="#boston_house_price" timestamp="1578496419192">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="412" y="0" width="532" height="742" key="#boston_house_price/0.0.1366.768@0.0.1366.768" timestamp="1578496419192" />
+    <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578496404749">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1578496404749" />
+    <state width="1324" height="250" key="GridCell.Tab.0.bottom" timestamp="1578741120701">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578741120701" />
+    <state width="1324" height="250" key="GridCell.Tab.0.center" timestamp="1578741120700">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1578741120700" />
+    <state width="1324" height="250" key="GridCell.Tab.0.left" timestamp="1578741120699">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1578741120699" />
+    <state width="1324" height="250" key="GridCell.Tab.0.right" timestamp="1578741120701">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1578741120701" />
+    <state width="1324" height="250" key="GridCell.Tab.1.bottom" timestamp="1578741120704">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578741120704" />
+    <state width="1324" height="250" key="GridCell.Tab.1.center" timestamp="1578741120702">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1578741120702" />
+    <state width="1324" height="250" key="GridCell.Tab.1.left" timestamp="1578741120702">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1578741120702" />
+    <state width="1324" height="250" key="GridCell.Tab.1.right" timestamp="1578741120703">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="250" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1578741120703" />
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1578737164741">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1578737164741" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py</url>
+          <line>191</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MachineLearningUdumy$boston_house_price.coverage" NAME="boston_house_price Coverage Results" MODIFIED="1578741044890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MultivariableLinearRegression" />
+  </component>
 </project>

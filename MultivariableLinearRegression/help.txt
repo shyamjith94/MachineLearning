@@ -40,3 +40,7 @@ evaluation and deploy final stage regression
 
 how to evaluate regression model
 ----------------------------------
+Skew
+the skew means after plot we find price of house higher value in some find
+
+transformation is process value reduce hy half

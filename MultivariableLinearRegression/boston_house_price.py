@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import statsmodels.api as sm
 
 boston_dataset = load_boston()
 pd.set_option('display.width', 320)
@@ -154,12 +155,47 @@ class BostonHouse:
         print('Train data set r-squared :-', linear_reg.score(x_train, y_train))
         print('Test data set r-squared :-', linear_reg.score(x_test, y_test))
         # -----model evaluation deploy model stage-----
+        # data transformation
+        print('Skew of the price column')
+        print(self.boston_dataset['PRICE'].skew())
+        print('price log')
+        y_log = np.log(self.boston_dataset['PRICE'])
+        print(y_log)
+        print('log skew is ', y_log.skew())
+        # sns.distplot(y_log)
+        # plt.title(f'log price with {y_log.skew()}')
+        # plt.show()
+        transformed_data = features
+        transformed_data['LOG_PRICE'] = y_log
+        sns.lmplot(x='LSTAT', y='LOG_PRICE', data=transformed_data, size=7, scatter_kws={'alpha': 0.6},
+                   line_kws={'color': 'darkred'})
+        plt.show()
 
+    def log_price_regression(self):
+        prices = np.log(self.boston_dataset['PRICE'])
+        feature = self.boston_dataset.drop('PRICE', axis=1)
+        x_train, x_test, y_train, y_test = train_test_split(feature, prices, test_size=0.2, random_state=10)
+        linear_reg = LinearRegression()
+        linear_reg.fit(x_train, y_train)
+        print('intercept log price', linear_reg.intercept_)
+        print('coef in data frame based on log price')
+        coef_df = pd.DataFrame(data=linear_reg.coef_, index=x_train.columns, columns=['coef'])
+        print(coef_df)
+        # making reverse calculation chalse river columns
+        print(np.e ** 0.08033)
+        # p value evaluating
+        x_inclu_constant = sm.add_constant(x_train)
+        model = sm.OLS(y_train, x_inclu_constant)
+        result = model.fit()
+        print('coef and p values')
+        cof_pvalue = pd.DataFrame({'coef': result.params, 'p_values': result.pvalues})
+        print(cof_pvalue)
 
 
 boston = BostonHouse(boston_dataset)
 boston.info()
 boston.cleaning_data()
 
-boston.static_data()
-boston.split_shuffle_data()
+# boston.static_data()
+# boston.split_shuffle_data()
+boston.log_price_regression()

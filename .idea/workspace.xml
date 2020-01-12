@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shellcheckPlugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultivariableLinearRegression/BostonHousePrice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultivariableLinearRegression/ValuationTool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultivariableLinearRegression/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MultivariableLinearRegression/help.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,9 +32,53 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.ValuationTool">
+    <configuration name="BostonHousePrice" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MachineLearningUdumy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultivariableLinearRegression" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultivariableLinearRegression/BostonHousePrice.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ValuationTool" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MachineLearningUdumy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultivariableLinearRegression" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultivariableLinearRegression/ValuationTool.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="MachineLearningUdumy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,28 +95,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="boston_house_price" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="MachineLearningUdumy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MultivariableLinearRegression" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -103,18 +127,37 @@
       <workItem from="1578492456065" duration="69000" />
       <workItem from="1578493125091" duration="3109000" />
       <workItem from="1578732907325" duration="15000" />
-      <workItem from="1578732967457" duration="8054000" />
+      <workItem from="1578732967457" duration="9752000" />
+      <workItem from="1578744512331" duration="5351000" />
+      <workItem from="1578751910048" duration="5700000" />
+      <workItem from="1578825763718" duration="14158000" />
     </task>
+    <task id="LOCAL-00001" summary="log price based regression fit">
+      <created>1578741284176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578741284176</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="log price based regression fit" />
+    <option name="LAST_COMMIT_MESSAGE" value="log price based regression fit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="277" width="352" height="184" key="#Shellcheck" timestamp="1578734447448">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="507" y="277" width="352" height="184" key="#Shellcheck/0.0.1366.768@0.0.1366.768" timestamp="1578734447448" />
+    <state x="412" y="0" width="532" height="742" key="#ValuationTool" timestamp="1578840316476">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="412" y="0" width="532" height="742" key="#ValuationTool/0.0.1366.768@0.0.1366.768" timestamp="1578840316476" />
     <state x="412" y="0" width="532" height="742" key="#boston_house_price" timestamp="1578496419192">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -123,55 +166,61 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1578496404749" />
-    <state width="1324" height="250" key="GridCell.Tab.0.bottom" timestamp="1578741120701">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1578741283465">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578741120701" />
-    <state width="1324" height="250" key="GridCell.Tab.0.center" timestamp="1578741120700">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1578741283465" />
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1578829386044">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1578741120700" />
-    <state width="1324" height="250" key="GridCell.Tab.0.left" timestamp="1578741120699">
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1578829386044" />
+    <state width="1324" height="209" key="GridCell.Tab.0.bottom" timestamp="1578842758887">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1578741120699" />
-    <state width="1324" height="250" key="GridCell.Tab.0.right" timestamp="1578741120701">
+    <state width="1324" height="209" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578842758887" />
+    <state width="1324" height="209" key="GridCell.Tab.0.center" timestamp="1578842758886">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1578741120701" />
-    <state width="1324" height="250" key="GridCell.Tab.1.bottom" timestamp="1578741120704">
+    <state width="1324" height="209" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1578842758886" />
+    <state width="1324" height="209" key="GridCell.Tab.0.left" timestamp="1578842758886">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578741120704" />
-    <state width="1324" height="250" key="GridCell.Tab.1.center" timestamp="1578741120702">
+    <state width="1324" height="209" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1578842758886" />
+    <state width="1324" height="209" key="GridCell.Tab.0.right" timestamp="1578842758887">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1578741120702" />
-    <state width="1324" height="250" key="GridCell.Tab.1.left" timestamp="1578741120702">
+    <state width="1324" height="209" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1578842758887" />
+    <state width="1324" height="242" key="GridCell.Tab.1.bottom" timestamp="1578759432614">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1578741120702" />
-    <state width="1324" height="250" key="GridCell.Tab.1.right" timestamp="1578741120703">
+    <state width="1324" height="242" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1578759432614" />
+    <state width="1324" height="242" key="GridCell.Tab.1.center" timestamp="1578759432613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1324" height="250" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1578741120703" />
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1578737164741">
+    <state width="1324" height="242" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1578759432613" />
+    <state width="1324" height="242" key="GridCell.Tab.1.left" timestamp="1578759432613">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1578737164741" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MultivariableLinearRegression/boston_house_price.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1324" height="242" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1578759432613" />
+    <state width="1324" height="242" key="GridCell.Tab.1.right" timestamp="1578759432614">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1324" height="242" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1578759432614" />
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1578756529011">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1578756529011" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1578741292990">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1578741292990" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578842709771">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1578842709771" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MachineLearningUdumy$boston_house_price.coverage" NAME="boston_house_price Coverage Results" MODIFIED="1578741044890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MultivariableLinearRegression" />
+    <SUITE FILE_PATH="coverage/MachineLearningUdumy$ValuationTool.coverage" NAME="ValuationTool Coverage Results" MODIFIED="1578842758858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MultivariableLinearRegression" />
+    <SUITE FILE_PATH="coverage/MachineLearningUdumy$boston_house_price.coverage" NAME="BostonHousePrice Coverage Results" MODIFIED="1578840294583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MultivariableLinearRegression" />
   </component>
 </project>

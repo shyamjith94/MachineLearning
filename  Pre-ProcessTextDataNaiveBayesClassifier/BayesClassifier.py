@@ -1,6 +1,7 @@
 import pandas as pd
 from os import walk
 from os.path import join
+import matplotlib.pyplot as plt
 
 pd.set_option('display.width', 320)
 pd.set_option('display.max_columns', None)
@@ -103,17 +104,29 @@ class EmailAnalysis:
         self.df_all_email.set_index('DOC_ID', inplace=True)
         print(self.df_all_email)
 
+    def visualization(self):
+        print('count of sam and non spam')
+        print(self.df_all_email.CATEGORY.value_counts())
+        amount_of_spam = self.df_all_email.CATEGORY.value_counts()[1]
+        amount_of_non_spam = self.df_all_email.CATEGORY.value_counts()[0]
+        category_names = ['Spam', 'Legit Mail']
+        size_data = [amount_of_spam, amount_of_non_spam]
+        print(size_data)
+        plt.pie(size_data, labels=category_names, startangle=90, autopct='%1.2f%%')
+        plt.show()
+
     def __call__(self, *args, **kwargs):
         spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
         df_spam_email = spam_email.df_from_directory()
         spam_email = EmailBodyExtraction(path=SPAM_2_PATH, category=1)
         df_spam_email = df_spam_email.append(spam_email.df_from_directory())
-        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_1, category=2)
+        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_1, category=0)
         df_non_spam_email = spam_email.df_from_directory()
-        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=2)
+        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=0)
         df_non_spam_email = df_non_spam_email.append(spam_email.df_from_directory())
         self.df_all_email = pd.concat([df_non_spam_email, df_spam_email])
         self.clean_data()
+        self.visualization()
 
 
 email_analysis = EmailAnalysis()

@@ -161,7 +161,7 @@
       <workItem from="1578925724756" duration="12567000" />
       <workItem from="1579008044043" duration="5505000" />
       <workItem from="1579019724277" duration="460000" />
-      <workItem from="1579020313516" duration="5302000" />
+      <workItem from="1579020313516" duration="6538000" />
     </task>
     <task id="LOCAL-00001" summary="log price based regression fit">
       <created>1578741284176</created>
@@ -198,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578940537256</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="reading all mail using yield and cleaning data frame">
+      <created>1579025699600</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579025699600</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +218,8 @@
     <MESSAGE value="predict house price of boston complete" />
     <MESSAGE value="jupyter notebook added" />
     <MESSAGE value="just started bayes classification algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="just started bayes classification algorithm" />
+    <MESSAGE value="reading all mail using yield and cleaning data frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="reading all mail using yield and cleaning data frame" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="277" width="352" height="184" key="#Shellcheck" timestamp="1578734447448">
@@ -230,10 +238,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1578496404749" />
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1578940528921">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579025698044">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1578940528921" />
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579025698044" />
     <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1578829386044">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -274,10 +282,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1578756529011" />
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1578940570041">
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1579025707363">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1578940570041" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579025707363" />
     <state width="683" height="399" key="XDebugger.FullValuePopup" timestamp="1579019041658">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

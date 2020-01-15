@@ -3,9 +3,19 @@ from os import walk
 from os.path import join
 import matplotlib.pyplot as plt
 
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.stem import SnowballStemmer
+from nltk.corpus import stopwords
+from nltk.tokenize import WordPunctTokenizer, word_tokenize
+
+from bs4 import BeautifulSoup
+
 pd.set_option('display.width', 320)
 pd.set_option('display.max_columns', None)
 
+nltk.download('punkt')
+nltk.download('stopwords')
 FILE_PATH = '/home/shyam/GitRespository/MachineLearningUdumy/ ' \
             'Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/01_Processing/practice_email.txt'
 
@@ -30,6 +40,34 @@ def read_test_email():
     email_body = '\n'.join(lines)
     stream.close()
     return email_body
+
+
+def tokenizer_remove_punctuation(self):
+    """remove punctuation, stop words and tokenize """
+    # example
+    msg = 'All work no play make jack a dull boy, to be or not to be. ??? no body expect to the Spanish ' \
+          'Inquisition'
+    tokenize_words = word_tokenize(msg.lower())
+    streamer = SnowballStemmer('english')
+    stop_words = stopwords.words('english')
+    stop_words = set(stop_words)
+    filtered_words = []
+    for words in tokenize_words:
+        if (words not in stop_words) and (words.isalpha()):
+            streamer_word = streamer.stem(words)
+            filtered_words.append(streamer_word)
+    print(filtered_words)
+
+
+def clean_emails(message, streamer=PorterStemmer()):
+    """remove punctuation, stop words and tokenize """
+    filtered_words = []
+    stop_words = set(stopwords.words('english'))
+    message_words = word_tokenize(message.lower())
+    for words in message_words:
+        if (words not in stop_words) and (words.isalpha()):
+            filtered_words.append(streamer.stem(words))
+    return filtered_words
 
 
 class EmailBodyExtraction:
@@ -58,6 +96,13 @@ class EmailBodyExtraction:
         rows = []
         rows_name = []
         for file_name, email_body in self.email_body_generator():
+
+
+            test_func = clean_emails(email_body)
+            print('***********************')
+            print(test_func)
+
+
             rows.append({'MESSAGE': email_body, 'CATEGORY': self.category})
             rows_name.append(file_name)
         return pd.DataFrame(data=rows, index=rows_name)
@@ -112,7 +157,22 @@ class EmailAnalysis:
         category_names = ['Spam', 'Legit Mail']
         size_data = [amount_of_spam, amount_of_non_spam]
         print(size_data)
+        plt.pie(size_data, labels=category_names, startangle=90, autopct='%1.2f%%', explode=[0, 0.1])
+        plt.show()
+
+        # donut chart
         plt.pie(size_data, labels=category_names, startangle=90, autopct='%1.2f%%')
+        center_circle = plt.Circle((0, 0), radius=0.6, fc='white')
+        plt.gca().add_artist(center_circle)
+        plt.show()
+
+        # for try donut chart with multiple category
+        category_names = ['Spam', 'Legit Mail', 'Update', 'Promotion']
+        size_data = [25, 43, 19, 22]
+        gape = [0.05, 0.05, 0.05, 0.05]
+        plt.pie(size_data, labels=category_names, startangle=90, autopct='%1.2f%%', explode=gape)
+        center_circle = plt.Circle((0, 0), radius=0.6, fc='white')
+        plt.gca().add_artist(center_circle)
         plt.show()
 
     def __call__(self, *args, **kwargs):
@@ -125,8 +185,9 @@ class EmailAnalysis:
         spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=0)
         df_non_spam_email = df_non_spam_email.append(spam_email.df_from_directory())
         self.df_all_email = pd.concat([df_non_spam_email, df_spam_email])
-        self.clean_data()
-        self.visualization()
+
+
+        # self.visualization()
 
 
 email_analysis = EmailAnalysis()

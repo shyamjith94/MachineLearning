@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/TestPyspark.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -78,6 +79,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="TestPyspark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MachineLearningUdumy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/TestPyspark.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ValuationTool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MachineLearningUdumy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,6 +148,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.BayesClassifier" />
+        <item itemvalue="Python.TestPyspark" />
         <item itemvalue="Python.ValuationTool" />
       </list>
     </recent_temporary>
@@ -162,7 +186,13 @@
       <workItem from="1579008044043" duration="5505000" />
       <workItem from="1579019724277" duration="460000" />
       <workItem from="1579020313516" duration="6631000" />
-      <workItem from="1579099121749" duration="9347000" />
+      <workItem from="1579099121749" duration="9402000" />
+      <workItem from="1579361022664" duration="3333000" />
+      <workItem from="1579364595080" duration="2417000" />
+      <workItem from="1579443542565" duration="5205000" />
+      <workItem from="1579527728396" duration="1595000" />
+      <workItem from="1579794225040" duration="830000" />
+      <workItem from="1579795158808" duration="5584000" />
     </task>
     <task id="LOCAL-00001" summary="log price based regression fit">
       <created>1578741284176</created>
@@ -213,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579026920209</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="complete pie diagram started cleaning email">
+      <created>1579113436045</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579113436045</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,13 +265,18 @@
     <MESSAGE value="just started bayes classification algorithm" />
     <MESSAGE value="reading all mail using yield and cleaning data frame" />
     <MESSAGE value="started visualization" />
-    <option name="LAST_COMMIT_MESSAGE" value="started visualization" />
+    <MESSAGE value="complete pie diagram started cleaning email" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete pie diagram started cleaning email" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="507" y="277" width="352" height="184" key="#Shellcheck" timestamp="1578734447448">
+    <state x="412" y="0" width="532" height="742" key="#BayesClassifier" timestamp="1579794686964">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="507" y="277" width="352" height="184" key="#Shellcheck/0.0.1366.768@0.0.1366.768" timestamp="1578734447448" />
+    <state x="412" y="0" width="532" height="742" key="#BayesClassifier/0.0.1366.768@0.0.1366.768" timestamp="1579794686963" />
+    <state x="507" y="277" width="352" height="184" key="#Shellcheck" timestamp="1579444361851">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="507" y="277" width="352" height="184" key="#Shellcheck/0.0.1366.768@0.0.1366.768" timestamp="1579444361851" />
     <state x="412" y="0" width="532" height="742" key="#ValuationTool" timestamp="1578840316476">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -247,14 +289,18 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="141" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1578496404749" />
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579026919964">
+    <state x="366" y="101" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579361066892">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579026919964" />
-    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1578829386044">
+    <state x="366" y="101" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1579361066892" />
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579113434498">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1578829386044" />
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579113434498" />
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1579443728853">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579443728853" />
     <state width="1324" height="242" key="GridCell.Tab.0.bottom" timestamp="1579019662926">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -287,18 +333,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1324" height="242" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1579019662927" />
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1579111672718">
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1579529224735">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579111672718" />
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1579026926313">
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579529224735" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1579113448184">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579026926313" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579113448184" />
     <state width="683" height="399" key="XDebugger.FullValuePopup" timestamp="1579019041658">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="683" height="399" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1579019041658" />
+    <state x="0" y="0" width="745" height="768" key="find.popup" timestamp="1579795395678">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="0" y="0" width="745" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1579795395678" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578842709771">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

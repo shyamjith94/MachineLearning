@@ -42,7 +42,7 @@ def read_test_email():
     return email_body
 
 
-def tokenizer_remove_punctuation(self):
+def tokenizer_remove_punctuation():
     """remove punctuation, stop words and tokenize """
     # example
     msg = 'All work no play make jack a dull boy, to be or not to be. ??? no body expect to the Spanish ' \
@@ -64,6 +64,21 @@ def clean_emails(message, streamer=PorterStemmer()):
     filtered_words = []
     stop_words = set(stopwords.words('english'))
     message_words = word_tokenize(message.lower())
+    for words in message_words:
+        if (words not in stop_words) and (words.isalpha()):
+            filtered_words.append(streamer.stem(words))
+    return filtered_words
+
+
+def clean_mail_html_tags(message, streamer=PorterStemmer()):
+    """remove punctuation, stop words and tokenize """
+    filtered_words = []
+    # remove html tags
+    soup = BeautifulSoup(message, 'html.parser')
+    cleaned_text = soup.get_text()
+    # tokenize words
+    stop_words = set(stopwords.words('english'))
+    message_words = word_tokenize(cleaned_text.lower())
     for words in message_words:
         if (words not in stop_words) and (words.isalpha()):
             filtered_words.append(streamer.stem(words))
@@ -96,13 +111,6 @@ class EmailBodyExtraction:
         rows = []
         rows_name = []
         for file_name, email_body in self.email_body_generator():
-
-
-            test_func = clean_emails(email_body)
-            print('***********************')
-            print(test_func)
-
-
             rows.append({'MESSAGE': email_body, 'CATEGORY': self.category})
             rows_name.append(file_name)
         return pd.DataFrame(data=rows, index=rows_name)
@@ -175,6 +183,14 @@ class EmailAnalysis:
         plt.gca().add_artist(center_circle)
         plt.show()
 
+    def subset_applying_cleaning(self, data):
+        # cleaning and tokenize message and also remove all html tags
+        # applying all data frame and using apply function and subset data frame
+        print('start cleaning procedure')
+        test_func = clean_emails(data)
+        html = clean_mail_html_tags(data)
+        print(html)
+
     def __call__(self, *args, **kwargs):
         spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
         df_spam_email = spam_email.df_from_directory()
@@ -185,9 +201,23 @@ class EmailAnalysis:
         spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=0)
         df_non_spam_email = df_non_spam_email.append(spam_email.df_from_directory())
         self.df_all_email = pd.concat([df_non_spam_email, df_spam_email])
-
-
+        self.clean_data()
+        # visualize email using pie diagram
         # self.visualization()
+        # gathering index of spam and non message
+        doc_ids_spam = self.df_all_email[self.df_all_email.CATEGORY == 0].index
+        doc_ids_non_spam = self.df_all_email[self.df_all_email.CATEGORY == 1].index
+        main_list = self.df_all_email.MESSAGE
+        main_list = main_list.apply(clean_emails)
+        non_span_word_list = main_list.loc[doc_ids_non_spam]
+        span_word_list = main_list.loc[doc_ids_spam]
+        flat_list_non_spam = [item for sub_list in non_span_word_list for item in sub_list]
+        flat_list_spam = [item for sub_list in span_word_list for item in sub_list]
+        # making to list to pd Series
+        normal_words = pd.Series(flat_list_non_spam)
+        un_normal_words = pd.Series(flat_list_spam)
+        print('count of words in non spam email\t', normal_words.value_counts())
+        print('count of words in spam email\t', un_normal_words.value_counts())
 
 
 email_analysis = EmailAnalysis()

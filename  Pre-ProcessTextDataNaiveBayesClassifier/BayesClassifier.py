@@ -11,6 +11,7 @@ from nltk.tokenize import WordPunctTokenizer, word_tokenize
 
 from bs4 import BeautifulSoup
 
+from wordcloud import WordCloud
 pd.set_option('display.width', 320)
 pd.set_option('display.max_columns', None)
 
@@ -182,15 +183,8 @@ class EmailAnalysis:
         center_circle = plt.Circle((0, 0), radius=0.6, fc='white')
         plt.gca().add_artist(center_circle)
         plt.show()
-
-    def subset_applying_cleaning(self, data):
-        # cleaning and tokenize message and also remove all html tags
-        # applying all data frame and using apply function and subset data frame
-        print('start cleaning procedure')
-        test_func = clean_emails(data)
-        html = clean_mail_html_tags(data)
-        print(html)
-
+    def word_cloud(self):
+        pass
     def __call__(self, *args, **kwargs):
         spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
         df_spam_email = spam_email.df_from_directory()
@@ -216,9 +210,12 @@ class EmailAnalysis:
         # making to list to pd Series
         normal_words = pd.Series(flat_list_non_spam)
         un_normal_words = pd.Series(flat_list_spam)
-        print('count of words in non spam email\t', normal_words.value_counts())
-        print('count of words in spam email\t', un_normal_words.value_counts())
-
-
+        print('count of words in non spam email\n', normal_words.value_counts())
+        print('count of words in spam email\n', un_normal_words.value_counts())
+        print(df_spam_email.MESSAGE)
+        word_coud_test = WordCloud().generate(df_spam_email.MESSAGE[0])
+        plt.imshow(word_coud_test)
+        plt.axis('off')
+        plt.show()
 email_analysis = EmailAnalysis()
 email_analysis()

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/TestPyspark.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/help.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +192,9 @@
       <workItem from="1579443542565" duration="5205000" />
       <workItem from="1579527728396" duration="1595000" />
       <workItem from="1579794225040" duration="830000" />
-      <workItem from="1579795158808" duration="5584000" />
+      <workItem from="1579795158808" duration="5776000" />
+      <workItem from="1579888437234" duration="104000" />
+      <workItem from="1579888590969" duration="3543000" />
     </task>
     <task id="LOCAL-00001" summary="log price based regression fit">
       <created>1578741284176</created>
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579113436045</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="removing html tag and iterate all words in mail and category to pd series to spammy and normal words">
+      <created>1579803090064</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579803090064</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +275,8 @@
     <MESSAGE value="reading all mail using yield and cleaning data frame" />
     <MESSAGE value="started visualization" />
     <MESSAGE value="complete pie diagram started cleaning email" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete pie diagram started cleaning email" />
+    <MESSAGE value="removing html tag and iterate all words in mail and category to pd series to spammy and normal words" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing html tag and iterate all words in mail and category to pd series to spammy and normal words" />
   </component>
   <component name="WindowStateProjectService">
     <state x="412" y="0" width="532" height="742" key="#BayesClassifier" timestamp="1579794686964">
@@ -293,14 +303,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="366" y="101" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1579361066892" />
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579113434498">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579803088476">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579113434498" />
-    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1579443728853">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579803088476" />
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1579888488551">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579443728853" />
+    <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579888488551" />
     <state width="1324" height="242" key="GridCell.Tab.0.bottom" timestamp="1579019662926">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -333,14 +343,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1324" height="242" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1579019662927" />
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1579529224735">
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor" timestamp="1579890645489">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579529224735" />
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1579113448184">
+    <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579890645489" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1579803095167">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579113448184" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579803095167" />
     <state width="683" height="399" key="XDebugger.FullValuePopup" timestamp="1579019041658">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

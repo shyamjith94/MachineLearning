@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from os import walk
 from os.path import join
 import matplotlib.pyplot as plt
@@ -12,11 +13,16 @@ from nltk.tokenize import WordPunctTokenizer, word_tokenize
 from bs4 import BeautifulSoup
 
 from wordcloud import WordCloud
+from PIL import Image
+
 pd.set_option('display.width', 320)
 pd.set_option('display.max_columns', None)
 
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('gutenberg')
+nltk.download('shakespeare')
+
 FILE_PATH = '/home/shyam/GitRespository/MachineLearningUdumy/ ' \
             'Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/01_Processing/practice_email.txt'
 
@@ -26,6 +32,9 @@ SPAM_1_PATH = ROOT + 'spam_1'
 SPAM_2_PATH = ROOT + 'spam_2'
 EASY_NON_SPAM_1 = ROOT + 'easy_ham_1'
 EASY_NON_SPAM_2 = ROOT + 'easy_ham_2'
+DATA_JSON_FILE = '/home/shyam/GitRespository/MachineLearningUdumy/ Pre-ProcessTextDataNaiveBayesClassifier/' \
+                 'SampleData/SpamData/SpamData/01_Processing/email-text-data.json'
+WHALE_FILE = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/whale-icon.png'
 
 
 def read_test_email():
@@ -183,8 +192,10 @@ class EmailAnalysis:
         center_circle = plt.Circle((0, 0), radius=0.6, fc='white')
         plt.gca().add_artist(center_circle)
         plt.show()
+
     def word_cloud(self):
         pass
+
     def __call__(self, *args, **kwargs):
         spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
         df_spam_email = spam_email.df_from_directory()
@@ -205,6 +216,7 @@ class EmailAnalysis:
         main_list = main_list.apply(clean_emails)
         non_span_word_list = main_list.loc[doc_ids_non_spam]
         span_word_list = main_list.loc[doc_ids_spam]
+        print('generate flat list')
         flat_list_non_spam = [item for sub_list in non_span_word_list for item in sub_list]
         flat_list_spam = [item for sub_list in span_word_list for item in sub_list]
         # making to list to pd Series
@@ -213,9 +225,28 @@ class EmailAnalysis:
         print('count of words in non spam email\n', normal_words.value_counts())
         print('count of words in spam email\n', un_normal_words.value_counts())
         print(df_spam_email.MESSAGE)
-        word_coud_test = WordCloud().generate(df_spam_email.MESSAGE[0])
-        plt.imshow(word_coud_test)
+        word_could_test = WordCloud().generate(df_spam_email.MESSAGE[0])
+        plt.imshow(word_could_test, interpolation='bilinear')
         plt.axis('off')
         plt.show()
+
+        # creating New image file using pillow
+        # testing words could with novel spakepear
+        novel_corpus = nltk.corpus.gutenberg.words('melville-moby_dick.txt')
+        word_list = [''.join(words) for words in novel_corpus]
+        word_string = ' '.join(word_list)
+
+        icon = Image.open(WHALE_FILE)
+        image_mask = Image.new(mode='RGB', size=icon.size, color=(255, 255, 255))
+        image_mask.paste(icon, box=icon)
+
+        rgb_array = np.array(image_mask)
+        word_could = WordCloud(mask=rgb_array, background_color='white')
+        word_could.generate(str(word_string))
+        plt.imshow(word_could, interpolation='bilinear')
+        plt.axis('off')
+        plt.show()
+
+
 email_analysis = EmailAnalysis()
 email_analysis()

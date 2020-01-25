@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/notebook/06-Bayes-Classifier-Pre-Processing.ipynb.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/notebook/06-Bayes-Classifier-Pre-Processing.ipynb/06 Bayes Classifier - Pre-Processing.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/notebook/06-Bayes-Classifier-Pre-Processing.ipynb/__MACOSX/._06 Bayes Classifier - Pre-Processing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/help.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearningUdumy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="620a3c7a-3b13-4676-be17-704c06425460" />
   <component name="ProjectId" id="1VIkiKcYIMElEgGI6UU7wyPs6af" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -36,6 +40,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
   </component>
   <component name="RunManager" selected="Python.BayesClassifier">
     <configuration name="BayesClassifier" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -194,7 +205,9 @@
       <workItem from="1579794225040" duration="830000" />
       <workItem from="1579795158808" duration="5776000" />
       <workItem from="1579888437234" duration="104000" />
-      <workItem from="1579888590969" duration="3543000" />
+      <workItem from="1579888590969" duration="3581000" />
+      <workItem from="1579936891384" duration="592000" />
+      <workItem from="1579937861970" duration="5940000" />
     </task>
     <task id="LOCAL-00001" summary="log price based regression fit">
       <created>1578741284176</created>
@@ -259,7 +272,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579803090064</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="started word cloud">
+      <created>1579892163175</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579892163175</updated>
+    </task>
+    <task id="LOCAL-00011" summary="started word cloud">
+      <created>1579892172416</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579892172416</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +303,8 @@
     <MESSAGE value="started visualization" />
     <MESSAGE value="complete pie diagram started cleaning email" />
     <MESSAGE value="removing html tag and iterate all words in mail and category to pd series to spammy and normal words" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing html tag and iterate all words in mail and category to pd series to spammy and normal words" />
+    <MESSAGE value="started word cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="started word cloud" />
   </component>
   <component name="WindowStateProjectService">
     <state x="412" y="0" width="532" height="742" key="#BayesClassifier" timestamp="1579794686964">
@@ -303,10 +331,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="366" y="101" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1579361066892" />
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579892161701">
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1579892172158">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579892161701" />
+    <state x="304" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579892172158" />
     <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1579888488551">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -359,6 +387,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="0" y="0" width="745" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1579795395678" />
+    <state width="450" height="212" key="javadoc.popup.new" timestamp="1579943382449">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="450" height="212" key="javadoc.popup.new/0.0.1366.768@0.0.1366.768" timestamp="1579943382449" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578842709771">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

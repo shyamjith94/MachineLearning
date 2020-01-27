@@ -15,13 +15,17 @@ from bs4 import BeautifulSoup
 from wordcloud import WordCloud
 from PIL import Image
 
+from sklearn.model_selection import train_test_split
+
 pd.set_option('display.width', 320)
 pd.set_option('display.max_columns', None)
 
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('gutenberg')
-nltk.download('shakespeare')
+# ntlk download language pack need to run only once
+
+# nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('gutenberg')
+# nltk.download('shakespeare')
 
 FILE_PATH = '/home/shyam/GitRespository/MachineLearningUdumy/ ' \
             'Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/01_Processing/practice_email.txt'
@@ -35,6 +39,32 @@ EASY_NON_SPAM_2 = ROOT + 'easy_ham_2'
 DATA_JSON_FILE = '/home/shyam/GitRespository/MachineLearningUdumy/ Pre-ProcessTextDataNaiveBayesClassifier/' \
                  'SampleData/SpamData/SpamData/01_Processing/email-text-data.json'
 WHALE_FILE = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/whale-icon.png'
+NON_SPAM_THUMPS_UP = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/thumbs-up.png'
+SPAM_THUMPS_DOWN = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/thumbs-down.png'
+WORD_ID_FILE = 'SampleData/SpamData/SpamData/01_Processing/words-by-id.csv'
+# VOCAB_SIZE = 2500
+VOCAB_SIZE = 9
+CHECK_VOCAB = '/home/shyam/GitRespository/MachineLearningUdumy/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/' \
+              'SpamData/SpamData/01_Processing/word-by-id.csv'
+
+
+def word_cloud():
+    # creating New image file using pillow
+    # testing words could with novel spakepear
+    novel_corpus = nltk.corpus.gutenberg.words('melville-moby_dick.txt')
+    word_list = [''.join(words) for words in novel_corpus]
+    word_string = ' '.join(word_list)
+
+    icon = Image.open(WHALE_FILE)
+    image_mask = Image.new(mode='RGB', size=icon.size, color=(255, 255, 255))
+    image_mask.paste(icon, box=icon)
+
+    rgb_array = np.array(image_mask)
+    word_could = WordCloud(mask=rgb_array, background_color='white')
+    word_could.generate(str(word_string))
+    plt.imshow(word_could, interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
 
 
 def read_test_email():
@@ -95,6 +125,16 @@ def clean_mail_html_tags(message, streamer=PorterStemmer()):
     return filtered_words
 
 
+def word_is_part_vocabulary(word):
+    """Checking If Words In Vocab"""
+    vocab = pd.read_csv(CHECK_VOCAB)
+    return word in set(vocab.VOCAB_WORD)
+
+
+def find_longest_email(email_data):
+    return email_data.MESSAGE.str.len()
+
+
 class EmailBodyExtraction:
     """Read all email using Generator"""
 
@@ -129,6 +169,9 @@ class EmailBodyExtraction:
 class EmailAnalysis:
     def __init__(self):
         self.df_all_email = pd.DataFrame()
+        self.non_spam_string = ''
+        self.spam_string = ''
+        self.words_data_frame = None
 
     def clean_data(self):
         print(self.df_all_email)
@@ -165,6 +208,7 @@ class EmailAnalysis:
         document_id = range(0, len(self.df_all_email.index))
         self.df_all_email['DOC_ID'] = document_id
         self.df_all_email.set_index('DOC_ID', inplace=True)
+        self.df_all_email = self.df_all_email.iloc[0:10]
         print(self.df_all_email)
 
     def visualization(self):
@@ -193,22 +237,60 @@ class EmailAnalysis:
         plt.gca().add_artist(center_circle)
         plt.show()
 
-    def word_cloud(self):
-        pass
+    def spam_non_spam_word_cloud(self):
+        icon_non_spam = Image.open(NON_SPAM_THUMPS_UP)
+        icon_spam = Image.open(SPAM_THUMPS_DOWN)
+        non_spam_image_mask = Image.new(mode='RGB', size=icon_non_spam.size, color=(255, 255, 255))
+        non_spam_image_mask.paste(icon_non_spam, box=icon_non_spam)
 
-    def __call__(self, *args, **kwargs):
-        spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
-        df_spam_email = spam_email.df_from_directory()
-        spam_email = EmailBodyExtraction(path=SPAM_2_PATH, category=1)
-        df_spam_email = df_spam_email.append(spam_email.df_from_directory())
-        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_1, category=0)
-        df_non_spam_email = spam_email.df_from_directory()
-        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=0)
-        df_non_spam_email = df_non_spam_email.append(spam_email.df_from_directory())
-        self.df_all_email = pd.concat([df_non_spam_email, df_spam_email])
-        self.clean_data()
-        # visualize email using pie diagram
-        # self.visualization()
+        spam_image_mask = Image.new(mode='RGB', size=icon_spam.size, color=(255, 255, 255))
+        spam_image_mask.paste(icon_spam)
+        rgb_spam_array = np.array(spam_image_mask)
+        rgb_non_spam_array = np.array(non_spam_image_mask)
+        spam_word_cloud = WordCloud(mask=rgb_spam_array, background_color='white', colormap='gist_heat')
+        spam_word_cloud.generate(str(self.spam_string))
+        non_spam_word_cloud = WordCloud(mask=rgb_non_spam_array, background_color='white', colormap='gist_heat')
+        non_spam_word_cloud.generate(str(self.non_spam_string))
+        plt.imshow(non_spam_word_cloud)
+        plt.axis('off')
+        plt.show()
+        plt.imshow(spam_word_cloud)
+        plt.axis('off')
+        plt.show()
+
+    def vocabulary_dictionary(self):
+        # gathering index of spam and non message
+        # cleaning html tags
+        main_list = self.df_all_email.MESSAGE
+        main_list = main_list.apply(clean_mail_html_tags)
+        print('generate flat list vocabulary')
+        flat_list_non_spam = [item for sub_list in main_list for item in sub_list]
+        # making to list to pd Series
+        normal_words = pd.Series(flat_list_non_spam)
+        print('count of words in non spam email\n', normal_words.value_counts())
+        normal_words = normal_words.value_counts()
+        print(normal_words)
+        normal_words = normal_words.iloc[0: VOCAB_SIZE]
+        # creating Data frame in 2500 row
+        # creating index id
+        words_id = list(range(0, VOCAB_SIZE))
+        vocab = pd.DataFrame({'VOCAB_WORD': normal_words.index.values}, index=words_id)
+        vocab.index.name = 'WORDS_ID'
+        # once done then reading from file
+        # vocab.to_csv(DATA_JSON_FILE, index_label=vocab.index.name)
+        series = pd.Series(main_list)
+        # data frame have created for each word in column
+        self.words_data_frame = pd.DataFrame.from_records(series.to_list())
+
+    def train_test_data_frame(self):
+        x_train, x_test, y_train, y_test = train_test_split(self.words_data_frame, self.df_all_email.CATEGORY,
+                                                            test_size=0.3, random_state=42)
+        print('no of train sample\t', x_train.shape[0])
+        print('fraction of training set\t', x_train.shape[0] / self.words_data_frame.shape[0])
+        # creating spark matrix
+
+    def cleaning_message(self):
+        """remove punctuation, stop words and tokenize """
         # gathering index of spam and non message
         doc_ids_spam = self.df_all_email[self.df_all_email.CATEGORY == 0].index
         doc_ids_non_spam = self.df_all_email[self.df_all_email.CATEGORY == 1].index
@@ -224,29 +306,48 @@ class EmailAnalysis:
         un_normal_words = pd.Series(flat_list_spam)
         print('count of words in non spam email\n', normal_words.value_counts())
         print('count of words in spam email\n', un_normal_words.value_counts())
-        print(df_spam_email.MESSAGE)
-        word_could_test = WordCloud().generate(df_spam_email.MESSAGE[0])
-        plt.imshow(word_could_test, interpolation='bilinear')
-        plt.axis('off')
-        plt.show()
+        # creating words cloud for spam and non message
+        self.non_spam_string = ' '.join(normal_words)
+        self.spam_string = ' '.join(un_normal_words)
 
-        # creating New image file using pillow
-        # testing words could with novel spakepear
-        novel_corpus = nltk.corpus.gutenberg.words('melville-moby_dick.txt')
-        word_list = [''.join(words) for words in novel_corpus]
-        word_string = ' '.join(word_list)
+    def __call__(self, *args, **kwargs):
+        spam_email = EmailBodyExtraction(path=SPAM_1_PATH, category=1)
+        df_spam_email = spam_email.df_from_directory()
+        spam_email = EmailBodyExtraction(path=SPAM_2_PATH, category=1)
+        df_spam_email = df_spam_email.append(spam_email.df_from_directory())
+        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_1, category=0)
+        df_non_spam_email = spam_email.df_from_directory()
+        spam_email = EmailBodyExtraction(path=EASY_NON_SPAM_2, category=0)
+        df_non_spam_email = df_non_spam_email.append(spam_email.df_from_directory())
+        self.df_all_email = pd.concat([df_non_spam_email, df_spam_email])
+        self.clean_data()
+        # visualize email using pie diagram
+        # self.visualization()
 
-        icon = Image.open(WHALE_FILE)
-        image_mask = Image.new(mode='RGB', size=icon.size, color=(255, 255, 255))
-        image_mask.paste(icon, box=icon)
+        # call cleaning method
+        # self.cleaning_message()
 
-        rgb_array = np.array(image_mask)
-        word_could = WordCloud(mask=rgb_array, background_color='white')
-        word_could.generate(str(word_string))
-        plt.imshow(word_could, interpolation='bilinear')
-        plt.axis('off')
-        plt.show()
+        # words cloud thumps up and down graphical representationdf_all_email
+        # self.spam_non_spam_word_cloud()
+
+        # creating vocabulary dictionary and clean all html tags
+        self.vocabulary_dictionary()
+
+        # word is part of vocabulary
+        # print(self.word_is_part_vocabulary(word='check'))
+
+        # find email with most number of words
+
+        # find length of mail
+        # longest_mail = find_longest_email(self.df_all_email)
+        # print('mail length\n', longest_mail)
+        # print('max length mail\n', longest_mail.max())
+        # print('min length mail\n', longest_mail.min())
+
+        # train and test data
+        self.train_test_data_frame()
 
 
 email_analysis = EmailAnalysis()
 email_analysis()
+# word_cloud()

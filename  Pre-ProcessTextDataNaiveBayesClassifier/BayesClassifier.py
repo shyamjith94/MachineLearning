@@ -288,6 +288,22 @@ class EmailAnalysis:
         print('no of train sample\t', x_train.shape[0])
         print('fraction of training set\t', x_train.shape[0] / self.words_data_frame.shape[0])
         # creating spark matrix
+        # print(x_train.head())
+        print(self.words_data_frame)
+        vocab = pd.read_csv(CHECK_VOCAB)
+        # line using reduce time to run script need to remove final stage
+        vocab = vocab.iloc[0:9]
+        word_index = pd.Index(vocab.VOCAB_WORD)
+        print(word_index.get_loc('use'))
+
+    def make_sparse_matrix(self, df, indexed_words, label):
+        """
+        df: A Data Frame With Words in The Columns With A Document Id As an Index (X_TEST, Y_TRAIN)
+        indexed_words: Index Of Words Order by Word Id
+        labels: Category as Series (Y_TRAIN, Y_TEST)
+        :return: Sparse Matrix as data Frame
+        """
+        pass
 
     def cleaning_message(self):
         """remove punctuation, stop words and tokenize """

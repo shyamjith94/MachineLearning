@@ -43,9 +43,12 @@ NON_SPAM_THUMPS_UP = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resou
 SPAM_THUMPS_DOWN = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/thumbs-down.png'
 WORD_ID_FILE = 'SampleData/SpamData/SpamData/01_Processing/words-by-id.csv'
 # VOCAB_SIZE = 2500
-VOCAB_SIZE = 9
+VOCAB_SIZE = 100
 CHECK_VOCAB = '/home/shyam/GitRespository/MachineLearningUdumy/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/' \
               'SpamData/SpamData/01_Processing/word-by-id.csv'
+
+TRAINING_DATA_FILE = 'SampleData/SpamData/SpamData/02_Training/train_data.txt'
+TESTING_DATA_FILE = 'SampleData/SpamData/SpamData/02_Training/test_data.txt'
 
 
 def word_cloud():
@@ -135,6 +138,49 @@ def find_longest_email(email_data):
     return email_data.MESSAGE.str.len()
 
 
+def make_sparse_matrix_test(test_df, indexed_words, test_label):
+    """
+    df: A Data Frame With Words in The Columns With A Document Id As an Index (X_TEST, Y_TRAIN)
+    indexed_words: Index Of Words Order by Word Id
+    labels: Category as Series (Y_TRAIN, Y_TEST)
+    :return: Sparse Matrix as data Frame test data
+    """
+    nr_rows = test_df.shape[0]
+    nr_cols = test_df.shape[1]
+    word_set = set(indexed_words)
+    dict_list = []
+    for i in range(nr_rows):
+        for j in range(nr_cols):
+            word = test_df.iat[i, j]
+            if word in word_set:
+                doc_id = test_df.index[i]
+                word_id = indexed_words.get_loc(word)
+                category = test_label.at[doc_id]
+                item = {'LABEL': category, 'DOC_ID': doc_id, 'OCCURRENCE': 1, 'WORD_ID': word_id}
+                dict_list.append(item)
+    return pd.DataFrame(dict_list)
+
+
+def make_sparse_matrix_train(train_df, indexed_words, train_label):
+    """
+    :return: Sparse Matrix as data Frame for train data
+    """
+    nr_rows = train_df.shape[0]
+    nr_cols = train_df.shape[1]
+    word_set = set(indexed_words)
+    dict_list = []
+    for i in range(nr_rows):
+        for j in range(nr_cols):
+            word = train_df.iat[i, j]
+            if word in word_set:
+                doc_id = train_df.index[i]
+                word_id = indexed_words.get_loc(word)
+                category = train_label.at[doc_id]
+                item = {'LABEL': category, 'DOC_ID': doc_id, 'OCCURRENCE': 1, 'WORD_ID': word_id}
+                dict_list.append(item)
+    return pd.DataFrame(dict_list)
+
+
 class EmailBodyExtraction:
     """Read all email using Generator"""
 
@@ -208,7 +254,7 @@ class EmailAnalysis:
         document_id = range(0, len(self.df_all_email.index))
         self.df_all_email['DOC_ID'] = document_id
         self.df_all_email.set_index('DOC_ID', inplace=True)
-        self.df_all_email = self.df_all_email.iloc[0:10]
+        self.df_all_email = self.df_all_email.iloc[0:100]
         print(self.df_all_email)
 
     def visualization(self):
@@ -294,16 +340,24 @@ class EmailAnalysis:
         # line using reduce time to run script need to remove final stage
         vocab = vocab.iloc[0:9]
         word_index = pd.Index(vocab.VOCAB_WORD)
-        print(word_index.get_loc('use'))
-
-    def make_sparse_matrix(self, df, indexed_words, label):
-        """
-        df: A Data Frame With Words in The Columns With A Document Id As an Index (X_TEST, Y_TRAIN)
-        indexed_words: Index Of Words Order by Word Id
-        labels: Category as Series (Y_TRAIN, Y_TEST)
-        :return: Sparse Matrix as data Frame
-        """
-        pass
+        # calling function to create sparse matrix
+        sparse_matrix_train = make_sparse_matrix_train(train_df=x_train, indexed_words=word_index, train_label=y_train)
+        # combine occurrence sparse matrix using group by method
+        sparse_matrix_train = sparse_matrix_train.groupby(['DOC_ID', 'WORD_ID', 'LABEL']) \
+            .sum() \
+            .reset_index()
+        # saving text file using numpy
+        np.savetxt(TRAINING_DATA_FILE, sparse_matrix_train, fmt='%d')
+        print(sparse_matrix_train)
+        # calling function to create sparse matrix test data
+        sparse_matrix_train_test = make_sparse_matrix_test(test_df=x_test, indexed_words=word_index, test_label=y_test)
+        # combine occurrence sparse matrix using group by method
+        sparse_matrix_train_test = sparse_matrix_train_test.groupby(['DOC_ID', 'WORD_ID', 'LABEL']) \
+            .sum() \
+            .reset_index()
+        # saving text file using numpy
+        np.savetxt(TESTING_DATA_FILE, sparse_matrix_train_test, fmt='%d')
+        print(sparse_matrix_train_test)
 
     def cleaning_message(self):
         """remove punctuation, stop words and tokenize """

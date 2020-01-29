@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27212921-46c9-47b8-b81c-cc915e84018b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/02_Training/test_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/02_Training/train_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/SpamData/SpamData/02_Training/tran_data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/BayesClassifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ Pre-ProcessTextDataNaiveBayesClassifier/notebook/06-Bayes-Classifier-Pre-Processing sparx.ipynb.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +208,7 @@
       <workItem from="1580134036933" duration="371000" />
       <workItem from="1580134432203" duration="5012000" />
       <workItem from="1580223854512" duration="4138000" />
-      <workItem from="1580305693710" duration="6109000" />
+      <workItem from="1580305693710" duration="6816000" />
     </task>
     <task id="LOCAL-00001" summary="log price based regression fit">
       <created>1578741284176</created>
@@ -311,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580232187104</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="creating sparse matrix and return data frame and save file in text format">
+      <created>1580312524691</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1580312524691</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +349,8 @@
     <MESSAGE value="generate word could with custom image" />
     <MESSAGE value="creation of word data frame. like full matrix. Done train and test model. next step to create spark matrix using tran and test data frame" />
     <MESSAGE value="reading and creating of vocab words index and data frame. started function creating sparse matrix" />
-    <option name="LAST_COMMIT_MESSAGE" value="reading and creating of vocab words index and data frame. started function creating sparse matrix" />
+    <MESSAGE value="creating sparse matrix and return data frame and save file in text format" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating sparse matrix and return data frame and save file in text format" />
   </component>
   <component name="WindowStateProjectService">
     <state x="412" y="0" width="532" height="742" key="#BayesClassifier" timestamp="1579794686964">
@@ -372,10 +377,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="366" y="101" width="624" height="536" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1579361066892" />
-    <state x="435" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1580232186356">
+    <state x="435" y="0" width="747" height="768" key="CommitChangelistDialog2" timestamp="1580312524003">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="435" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1580232186356" />
+    <state x="435" y="0" width="747" height="768" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1580312524003" />
     <state x="466" y="111" width="424" height="515" key="FileChooserDialogImpl" timestamp="1579888488551">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -416,10 +421,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="194" y="3" width="977" height="731" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579946762735" />
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1580232194952">
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1580312529627">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1580232194952" />
+    <state x="278" y="104" width="800" height="529" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1580312529627" />
     <state width="683" height="399" key="XDebugger.FullValuePopup" timestamp="1579019041658">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

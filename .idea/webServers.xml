@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d8bfd0b5-c730-4b57-9708-71603fdf5653" name="CarepactTest" url="http://13.235.219.76">
+        <fileTransfer host="13.235.219.76" port="22" privateKey="$USER_HOME$/AWS/CarepactU18_4GS.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

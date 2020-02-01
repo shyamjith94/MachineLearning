@@ -43,6 +43,7 @@ NON_SPAM_THUMPS_UP = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resou
 SPAM_THUMPS_DOWN = 'SampleData/SpamData/SpamData/01_Processing/wordcloud_resources/thumbs-down.png'
 WORD_ID_FILE = 'SampleData/SpamData/SpamData/01_Processing/words-by-id.csv'
 # VOCAB_SIZE = 2500
+# reduce size smooth run
 VOCAB_SIZE = 100
 CHECK_VOCAB = '/home/shyam/GitRespository/MachineLearningUdumy/ Pre-ProcessTextDataNaiveBayesClassifier/SampleData/' \
               'SpamData/SpamData/01_Processing/word-by-id.csv'
@@ -254,6 +255,7 @@ class EmailAnalysis:
         document_id = range(0, len(self.df_all_email.index))
         self.df_all_email['DOC_ID'] = document_id
         self.df_all_email.set_index('DOC_ID', inplace=True)
+        # reduce size for smooth run
         self.df_all_email = self.df_all_email.iloc[0:100]
         print(self.df_all_email)
 
@@ -338,7 +340,7 @@ class EmailAnalysis:
         print(self.words_data_frame)
         vocab = pd.read_csv(CHECK_VOCAB)
         # line using reduce time to run script need to remove final stage
-        vocab = vocab.iloc[0:9]
+        # vocab = vocab.iloc[0:9]
         word_index = pd.Index(vocab.VOCAB_WORD)
         # calling function to create sparse matrix
         sparse_matrix_train = make_sparse_matrix_train(train_df=x_train, indexed_words=word_index, train_label=y_train)
@@ -395,10 +397,10 @@ class EmailAnalysis:
         # self.visualization()
 
         # call cleaning method
-        # self.cleaning_message()
+        self.cleaning_message()
 
         # words cloud thumps up and down graphical representationdf_all_email
-        # self.spam_non_spam_word_cloud()
+        self.spam_non_spam_word_cloud()
 
         # creating vocabulary dictionary and clean all html tags
         self.vocabulary_dictionary()

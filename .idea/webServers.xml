@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="4ee7d4fc-377a-4d97-8d4c-0c6386102c7f" name="DjangoApp" url="http://18.138.41.123">
+        <fileTransfer host="18.138.41.123" port="22" privateKey="$USER_HOME$/AWS/DjangoApp.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
